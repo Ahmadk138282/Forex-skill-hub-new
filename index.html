@@ -338,6 +338,16 @@
             color: var(--text);
             border-color: var(--border);
         }
+        .btn-about {
+            background: rgba(248, 197, 55, 0.1);
+            color: #f8c537;
+            border: 1px solid rgba(248, 197, 55, 0.2);
+        }
+        .btn-about:hover {
+            background: rgba(248, 197, 55, 0.2);
+            border-color: rgba(248, 197, 55, 0.4);
+            transform: translateY(-1px);
+        }
 
         /* ===== BUTTONS ===== */
         .btn {
@@ -1242,6 +1252,9 @@
                 <div class="header-actions">
                     <a href="#" class="btn-nav btn-back hidden" id="backToHomeBtn">
                         <i class="fas fa-arrow-left"></i> Home
+                    </a>
+                    <a href="/aboutus" class="btn-nav btn-about" aria-label="About Us">
+                        <i class="fas fa-info-circle"></i> About Us
                     </a>
                     <a href="https://forexskillhublectures.edgeone.app" class="btn-nav btn-login" target="_blank" rel="noopener" id="loginBtn">
                         <i class="fas fa-sign-in-alt"></i> Student Login

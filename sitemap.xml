@@ -1,27 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<root>
-  <row>
-    <_xml_version_1_0_encoding_UTF_8_>&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;</_xml_version_1_0_encoding_UTF_8_>
-  </row>
-  <row>
-    <_xml_version_1_0_encoding_UTF_8_>&lt;url&gt;</_xml_version_1_0_encoding_UTF_8_>
-  </row>
-  <row>
-    <_xml_version_1_0_encoding_UTF_8_>&lt;loc&gt;https://www.forexskillhub.com/&lt;/loc&gt;</_xml_version_1_0_encoding_UTF_8_>
-  </row>
-  <row>
-    <_xml_version_1_0_encoding_UTF_8_>&lt;lastmod&gt;2026-06-30&lt;/lastmod&gt;</_xml_version_1_0_encoding_UTF_8_>
-  </row>
-  <row>
-    <_xml_version_1_0_encoding_UTF_8_>&lt;changefreq&gt;weekly&lt;/changefreq&gt;</_xml_version_1_0_encoding_UTF_8_>
-  </row>
-  <row>
-    <_xml_version_1_0_encoding_UTF_8_>&lt;priority&gt;1.0&lt;/priority&gt;</_xml_version_1_0_encoding_UTF_8_>
-  </row>
-  <row>
-    <_xml_version_1_0_encoding_UTF_8_>&lt;/url&gt;</_xml_version_1_0_encoding_UTF_8_>
-  </row>
-  <row>
-    <_xml_version_1_0_encoding_UTF_8_>&lt;/urlset&gt;</_xml_version_1_0_encoding_UTF_8_>
-  </row>
-</root>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.forexskillhub.com/</loc>
+    <lastmod>2026-06-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.forexskillhub.com/aboutus</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
