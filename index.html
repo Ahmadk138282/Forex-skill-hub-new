@@ -19,8 +19,8 @@
       --bg-deep: #060d17;
       --bg-card: rgba(15, 26, 40, 0.78);
       --bg-card-solid: #0f1a28;
-      --accent: #00e5a0;
-      --accent-glow: rgba(0, 229, 160, 0.3);
+      --accent: #4db8ff;
+      --accent-glow: rgba(77, 184, 255, 0.3);
       --blue-soft: #4db8ff;
       --blue-deep: #1a3a5c;
       --blue-glow: rgba(77, 184, 255, 0.12);
@@ -29,7 +29,7 @@
       --text-muted: #a0b8cc;
       --text-soft: #c8dce8;
       --border: rgba(255, 255, 255, 0.06);
-      --border-accent: rgba(0, 229, 160, 0.15);
+      --border-accent: rgba(77, 184, 255, 0.2);
       --radius: 16px;
       --radius-lg: 24px;
       --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.5);
@@ -52,7 +52,7 @@
       position: relative;
     }
 
-    /* ----- animated background orbs ----- */
+    /* ----- animated background orbs (refined) ----- */
     .bg-canvas {
       position: fixed;
       inset: 0;
@@ -64,8 +64,8 @@
     .bg-canvas .orb {
       position: absolute;
       border-radius: 50%;
-      filter: blur(80px);
-      opacity: .5;
+      filter: blur(90px);
+      opacity: .4;
       animation: orbFloat 18s ease-in-out infinite alternate;
     }
 
@@ -102,7 +102,7 @@
     .bg-canvas .orb:nth-child(4) {
       width: 300px;
       height: 300px;
-      background: radial-gradient(circle, #00e5a0, transparent 70%);
+      background: radial-gradient(circle, #4db8ff, transparent 70%);
       bottom: 20%;
       left: 15%;
       opacity: .12;
@@ -125,7 +125,7 @@
       }
     }
 
-    /* ----- floating particles ----- */
+    /* ----- floating particles (subtle) ----- */
     .particles {
       position: fixed;
       inset: 0;
@@ -208,11 +208,11 @@
     @keyframes particleDrift {
       0% {
         transform: translate(0, 0) scale(1);
-        opacity: .2;
+        opacity: .15;
       }
       100% {
         transform: translate(60px, -40px) scale(1.8);
-        opacity: .6;
+        opacity: .5;
       }
     }
 
@@ -226,12 +226,12 @@
       z-index: 1;
     }
 
-    /* ----- header ----- */
+    /* ----- header (modern glass) ----- */
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(6, 13, 23, .85);
+      background: rgba(6, 13, 23, .82);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border);
@@ -258,7 +258,7 @@
       transition: opacity var(--transition);
     }
     .logo:hover {
-      opacity: .8;
+      opacity: .85;
     }
 
     .logo img {
@@ -266,7 +266,7 @@
       height: 40px;
       border-radius: 10px;
       object-fit: cover;
-      box-shadow: 0 2px 12px rgba(0, 229, 160, .2);
+      box-shadow: 0 2px 12px rgba(77, 184, 255, .2);
     }
 
     .logo-text {
@@ -311,14 +311,14 @@
       display: none;
     }
 
-    /* ----- buttons ----- */
+    /* ----- all buttons – blue shade gradient ----- */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
       padding: 14px 32px;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 1rem;
       border-radius: 50px;
       text-decoration: none;
@@ -329,42 +329,34 @@
       position: relative;
       overflow: hidden;
       white-space: nowrap;
+      background: linear-gradient(135deg, #3b8cff, #1a5fd0);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(59, 140, 255, .35);
+      letter-spacing: .3px;
     }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #00e5a0, #00b886);
-      color: #060d17;
-      box-shadow: 0 4px 24px rgba(0, 229, 160, .35);
-      font-weight: 700;
-    }
-    .btn-primary:hover {
+    .btn:hover {
       transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 40px rgba(0, 229, 160, .5);
+      box-shadow: 0 8px 32px rgba(59, 140, 255, .55);
     }
-    .btn-primary:active {
+    .btn:active {
       transform: translateY(0) scale(.98);
     }
 
+    /* keep whatsapp & reviews as accent but with blue touch */
     .btn-whatsapp {
-      background: linear-gradient(135deg, #25d366, #1a9e4b);
-      color: #fff;
+      background: linear-gradient(135deg, #25d366, #128c7e);
       box-shadow: 0 4px 20px rgba(37, 211, 102, .3);
-      font-weight: 700;
     }
     .btn-whatsapp:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 36px rgba(37, 211, 102, .5);
+      box-shadow: 0 8px 32px rgba(37, 211, 102, .5);
     }
 
     .btn-reviews {
       background: linear-gradient(135deg, #00b67a, #008a5c);
-      color: #fff;
       box-shadow: 0 4px 20px rgba(0, 182, 122, .3);
-      font-weight: 700;
     }
     .btn-reviews:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 36px rgba(0, 182, 122, .5);
+      box-shadow: 0 8px 32px rgba(0, 182, 122, .5);
     }
 
     .btn-submit {
@@ -403,11 +395,11 @@
       }
     }
 
-    /* ----- cards ----- */
+    /* ----- cards (glassmorphism refined) ----- */
     .card {
       background: var(--bg-card);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       padding: clamp(24px, 4vw, 36px);
@@ -430,7 +422,7 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: linear-gradient(90deg, var(--accent), var(--blue-soft), var(--accent));
+      background: linear-gradient(90deg, #4db8ff, #1a5fd0, #4db8ff);
       background-size: 200% 100%;
       animation: shimmerBorder 4s linear infinite;
       border-radius: 3px 3px 0 0;
@@ -499,7 +491,7 @@
       position: absolute;
       inset: 0;
       border-radius: var(--radius);
-      background: radial-gradient(circle at 50% 0, rgba(77, 184, 255, .05), transparent 70%);
+      background: radial-gradient(circle at 50% 0, rgba(77, 184, 255, .06), transparent 70%);
       opacity: 0;
       transition: opacity var(--transition);
     }
@@ -523,10 +515,10 @@
       transform: scale(1.1) rotate(-2deg);
     }
     .icon-accent {
-      color: var(--accent);
+      color: #4db8ff;
     }
     .icon-blue {
-      color: var(--blue-soft);
+      color: #3b8cff;
     }
     .icon-gold {
       color: var(--gold);
@@ -581,7 +573,7 @@
       letter-spacing: -.5px;
     }
     .hero h1 .highlight {
-      background: linear-gradient(135deg, #00e5a0, #4db8ff);
+      background: linear-gradient(135deg, #4db8ff, #7fc9ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -598,7 +590,7 @@
       font-weight: 600;
     }
 
-    /* ----- counters ----- */
+    /* ----- counters (removed 24/7) ----- */
     .counter-wrap {
       display: flex;
       justify-content: center;
@@ -624,7 +616,7 @@
     .counter-number {
       font-size: 2.2rem;
       font-weight: 700;
-      color: var(--accent);
+      color: #4db8ff;
       font-family: var(--font);
     }
     .counter-text {
@@ -656,7 +648,7 @@
     }
     .trust-badge i {
       font-size: 1.2rem;
-      color: var(--accent);
+      color: #4db8ff;
     }
 
     /* ----- comparison boxes ----- */
@@ -682,8 +674,8 @@
       border: 1px solid rgba(255, 80, 80, .15);
     }
     .comparison-box.after {
-      background: rgba(0, 229, 160, .05);
-      border: 1px solid rgba(0, 229, 160, .15);
+      background: rgba(77, 184, 255, .05);
+      border: 1px solid rgba(77, 184, 255, .15);
     }
     .comparison-box h3 {
       text-align: center;
@@ -694,7 +686,7 @@
       color: #ff6b6b;
     }
     .comparison-box.after h3 {
-      color: #00e5a0;
+      color: #4db8ff;
     }
 
     .cmp-item {
@@ -709,7 +701,7 @@
       color: #ff6b6b;
     }
     .after .cmp-icon {
-      color: #00e5a0;
+      color: #4db8ff;
     }
 
     /* ----- mentor section ----- */
@@ -734,7 +726,7 @@
       color: var(--text-soft);
     }
     .mentor-desc p strong {
-      color: var(--accent);
+      color: #4db8ff;
       font-weight: 600;
     }
 
@@ -753,7 +745,7 @@
     }
     .mentor-img img:hover {
       transform: scale(1.02);
-      border-color: var(--accent);
+      border-color: #4db8ff;
     }
 
     /* ----- FAQ ----- */
@@ -797,7 +789,7 @@
     }
     .faq-item.active .faq-question i.fa-chevron-down {
       transform: rotate(180deg);
-      color: var(--accent);
+      color: #4db8ff;
     }
 
     .faq-answer {
@@ -869,7 +861,7 @@
     }
     .bank-header h3 {
       font-size: 1.2rem;
-      color: var(--accent);
+      color: #4db8ff;
       font-family: var(--font);
     }
 
@@ -921,15 +913,15 @@
       flex-shrink: 0;
     }
     .copy-btn:hover {
-      background: var(--accent);
+      background: #4db8ff;
       color: #060d17;
-      border-color: var(--accent);
+      border-color: #4db8ff;
       transform: scale(1.05);
     }
     .copy-btn.copied {
-      background: var(--accent);
+      background: #4db8ff;
       color: #060d17;
-      border-color: var(--accent);
+      border-color: #4db8ff;
     }
 
     .form-card {
@@ -998,8 +990,8 @@
     }
     .form-control:focus {
       outline: 0;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 4px rgba(0, 229, 160, .1);
+      border-color: #4db8ff;
+      box-shadow: 0 0 0 4px rgba(77, 184, 255, .1);
       background: rgba(255, 255, 255, .07);
     }
     .form-control::placeholder {
@@ -1083,7 +1075,7 @@
       transition: color var(--transition);
     }
     .footer-links a:hover {
-      color: var(--accent);
+      color: #4db8ff;
     }
 
     .social-wrap {
@@ -1105,7 +1097,7 @@
       text-decoration: none;
     }
     .social-wrap a:hover {
-      background: var(--accent);
+      background: #4db8ff;
       transform: translateY(-3px);
       color: #060d17;
     }
@@ -1136,14 +1128,14 @@
       font-size: .85rem;
     }
 
-    /* ----- whatsapp float ----- */
+    /* ----- whatsapp float (blueish accent) ----- */
     .whatsapp-float {
       position: fixed;
       bottom: 28px;
       right: 28px;
       width: 54px;
       height: 54px;
-      background: #25d366;
+      background: linear-gradient(135deg, #25d366, #128c7e);
       color: #fff;
       border-radius: 50%;
       display: flex;
@@ -1311,9 +1303,9 @@
               — With a Real Mentor by Your Side
             </h1>
             <p>
-              No fluff. No fake promises. Just honest, step-by-step guidance from
+              No fluff. No fake promises. Just simple, step-by-step guidance from
               <strong>Yasir Ali Awan</strong>
-              — a trader who's been in the trenches. Daily live Zoom sessions, a supportive community, and a strategy that actually works.
+              — a trader who has been in the market for years. Daily live Zoom sessions, a helpful community, and a strategy that really works.
             </p>
 
             <div class="counter-wrap">
@@ -1325,14 +1317,11 @@
                 <div class="counter-number">90+</div>
                 <div class="counter-text">Success Rate</div>
               </div>
-              <div class="counter-item">
-                <div class="counter-number">24/7</div>
-                <div class="counter-text">Community Support</div>
-              </div>
+              <!-- 24/7 community support removed -->
             </div>
 
             <div class="btn-group">
-              <a href="#" class="btn btn-primary" id="enrollNowBtn">
+              <a href="#" class="btn" id="enrollNowBtn">
                 <i class="fas fa-user-graduate"></i> Enroll Now – $200
               </a>
               <a href="https://wa.me/923028797853" class="btn btn-whatsapp" target="_blank">
@@ -1358,12 +1347,12 @@
               <div class="grid-item">
                 <span class="icon icon-accent"><i class="fas fa-infinity"></i></span>
                 <h3>Lifetime Access</h3>
-                <p>All course materials, future updates, and recordings — yours forever. No recurring fees.</p>
+                <p>All course materials, future updates, and recordings — yours forever. No extra fees later.</p>
               </div>
               <div class="grid-item">
                 <span class="icon icon-blue"><i class="fas fa-chart-line"></i></span>
                 <h3>Proven VSA Method</h3>
-                <p>Volume Spread Analysis with over 90% accuracy. The same strategy pros use to read the market.</p>
+                <p>Volume Spread Analysis with over 90% accuracy. The same strategy professionals use to read the market.</p>
               </div>
               <div class="grid-item">
                 <span class="icon icon-gold"><i class="fas fa-users"></i></span>
@@ -1373,7 +1362,7 @@
               <div class="grid-item">
                 <span class="icon icon-accent"><i class="fas fa-hands-helping"></i></span>
                 <h3>Practical Skills</h3>
-                <p>We focus on real trading, not theory. You'll learn by doing — with guidance every step of the way.</p>
+                <p>We focus on real trading, not just theory. You'll learn by doing — with guidance every step of the way.</p>
               </div>
             </div>
           </div>
@@ -1557,11 +1546,11 @@
               <div class="mentor-desc">
                 <h2>Meet Your Mentor — Yasir Ali Awan</h2>
                 <p>
-                  Yasir isn't just another online "guru." He's a seasoned Forex trader with years of hands-on experience in Volume Spread Analysis and institutional trading strategies. He's helped students from all backgrounds — from complete beginners to struggling traders — find consistency and confidence in the markets. With daily morning Zoom sessions, live Q&amp;A, and one-on-one support, Yasir makes sure every student truly
-                  <em>gets it</em>
+                  Yasir is not just another online "guru." He is a real Forex trader with years of hands-on experience in Volume Spread Analysis and institutional trading strategies. He has helped students from all backgrounds — from complete beginners to struggling traders — find consistency and confidence in the markets. With daily morning Zoom sessions, live Q&amp;A, and one-on-one support, Yasir makes sure every student truly
+                  <em>understands</em>
                   before moving on. When you join ForexSkillHub, you're not buying a course — you're gaining a mentor.
                 </p>
-                <a href="#" class="btn btn-primary" id="enrollNowBtn2" style="margin-top:18px;">
+                <a href="#" class="btn" id="enrollNowBtn2" style="margin-top:18px;">
                   <i class="fas fa-user-graduate"></i> Start Learning – $200
                 </a>
               </div>
@@ -1644,7 +1633,7 @@
                 <p>Live, interactive learning</p>
               </div>
             </div>
-            <a href="#" class="btn btn-primary" id="enrollNowBtn3" style="margin-top:8px;">
+            <a href="#" class="btn" id="enrollNowBtn3" style="margin-top:8px;">
               <i class="fas fa-shopping-cart"></i> Enroll Now – $200
             </a>
           </div>
@@ -1759,7 +1748,7 @@
 
           <!-- Enrollment Form -->
           <div class="form-card reveal">
-            <h2><i class="fas fa-user-check" style="color:var(--accent);"></i> Submit Your Information</h2>
+            <h2><i class="fas fa-user-check" style="color:#4db8ff;"></i> Submit Your Information</h2>
 
             <div class="notice-box">
               <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
@@ -1817,7 +1806,7 @@
                 </select>
               </div>
 
-              <button type="submit" class="btn btn-primary btn-submit">
+              <button type="submit" class="btn btn-submit">
                 <i class="fas fa-paper-plane"></i> Submit Information
               </button>
               <div id="formMessage"></div>
@@ -2013,9 +2002,9 @@
             formMsg.style.color = '#f0c060';
             formMsg.style.border = '1px solid rgba(240,192,96,0.2)';
           } else if (type === 'success') {
-            formMsg.style.background = 'rgba(0,229,160,0.08)';
-            formMsg.style.color = '#00e5a0';
-            formMsg.style.border = '1px solid rgba(0,229,160,0.2)';
+            formMsg.style.background = 'rgba(77,184,255,0.08)';
+            formMsg.style.color = '#4db8ff';
+            formMsg.style.border = '1px solid rgba(77,184,255,0.2)';
           } else {
             formMsg.style.background = 'rgba(255,107,107,0.08)';
             formMsg.style.color = '#ff6b6b';
@@ -2165,4 +2154,4 @@
     </script>
   </div>
 </body>
-                  </html>
+</html>
