@@ -1774,9 +1774,20 @@
                 </div>
               </div>
 
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" class="form-control" placeholder="you@example.com" required />
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="gender">Gender</label>
+                  <select id="gender" class="form-control" required>
+                    <option value="">Select</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" class="form-control" placeholder="you@example.com" required />
+                </div>
               </div>
 
               <div class="form-row">
@@ -1892,6 +1903,7 @@
         const formMsg = document.getElementById('formMessage');
         const firstName = document.getElementById('firstName');
         const lastName = document.getElementById('lastName');
+        const gender = document.getElementById('gender');
         const email = document.getElementById('email');
         const country = document.getElementById('country');
         const city = document.getElementById('city');
@@ -1963,6 +1975,7 @@
               const data = JSON.parse(saved);
               firstName.value = data.firstName || '';
               lastName.value = data.lastName || '';
+              gender.value = data.gender || '';
               email.value = data.email || '';
               country.value = data.country || '';
               city.value = data.city || '';
@@ -1980,6 +1993,7 @@
             localStorage.setItem('forex_enroll_data', JSON.stringify({
               firstName: firstName.value,
               lastName: lastName.value,
+              gender: gender.value,
               email: email.value,
               country: country.value,
               city: city.value,
@@ -2050,7 +2064,7 @@
           window.location.hash = '';
         });
 
-        [firstName, lastName, email, country, city, phone, bankUsed].forEach(field => {
+        [firstName, lastName, gender, email, country, city, phone, bankUsed].forEach(field => {
           field.addEventListener('input', saveFormData);
           field.addEventListener('change', saveFormData);
         });
@@ -2062,6 +2076,7 @@
           const data = {
             first_name: firstName.value.trim(),
             last_name: lastName.value.trim(),
+            gender: gender.value,
             email: email.value.trim(),
             country: country.value.trim(),
             city: city.value.trim(),
@@ -2073,7 +2088,7 @@
           };
 
           // validate required fields
-          for (let key of ['first_name', 'last_name', 'email', 'country', 'city', 'phone', 'bank_used']) {
+          for (let key of ['first_name', 'last_name', 'gender', 'email', 'country', 'city', 'phone', 'bank_used']) {
             if (!data[key]) {
               showMessage('Please fill in all fields.', 'error');
               return;
