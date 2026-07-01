@@ -3,24 +3,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 - Page Not Found | ForexSkillHub</title>
+    <title>404 – Page Not Found | ForexSkillHub</title>
     <link rel="icon" type="image/png" sizes="32x32" href="https://uploads.onecompiler.io/43qvgqem8/43qvj82a8/Screenshot_2025-07-17_8.10.56_PM-removebg-preview.png" />
     <link rel="apple-touch-icon" href="https://uploads.onecompiler.io/43qvgqem8/43qvj82a8/Screenshot_2025-07-17_8.10.56_PM-removebg-preview.png" />
     <style>
-        :root {
-            --bg-deep: #080e14;
-            --accent: #00e5a0;
-            --accent-glow: rgba(0, 229, 160, 0.35);
-            --accent2: #4db8ff;
-            --gold: #f0c060;
-            --text: #e8edf2;
-            --text-muted: #94a3b8;
-            --border: rgba(255, 255, 255, 0.07);
-            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --font-heading: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
-            --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
-        *, *::before, *::after {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -28,12 +15,11 @@
         html {
             font-size: 16px;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
         body {
-            font-family: var(--font-body);
-            background: var(--bg-deep);
-            color: var(--text);
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background: #080e14;
+            color: #e8edf2;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -43,7 +29,7 @@
             overflow: hidden;
             position: relative;
         }
-        /* Ambient background gradients */
+        /* ambient glow */
         body::before {
             content: '';
             position: fixed;
@@ -55,7 +41,7 @@
                 radial-gradient(ellipse at 85% 75%, rgba(77, 184, 255, 0.04) 0%, transparent 55%),
                 radial-gradient(ellipse at 50% 50%, rgba(240, 192, 96, 0.02) 0%, transparent 70%);
         }
-        /* Floating particles */
+        /* floating particles */
         .particles {
             position: fixed;
             inset: 0;
@@ -66,7 +52,7 @@
         .particle {
             position: absolute;
             border-radius: 50%;
-            background: var(--accent);
+            background: #00e5a0;
             opacity: 0;
             animation: floatUp 8s infinite ease-in;
         }
@@ -84,7 +70,6 @@
             40% { opacity: 0.4; }
             100% { transform: translateY(-10vh) scale(1.8); opacity: 0; }
         }
-        /* Main content container */
         .error-container {
             text-align: center;
             position: relative;
@@ -96,7 +81,6 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* Logo */
         .logo {
             display: flex;
             align-items: center;
@@ -113,7 +97,7 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
         }
         .logo-text {
-            font-family: var(--font-heading);
+            font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
             font-size: 1.35rem;
             font-weight: 700;
             background: linear-gradient(135deg, #e8edf2, #bcc8d4);
@@ -122,9 +106,8 @@
             background-clip: text;
             letter-spacing: -0.3px;
         }
-        /* 404 number */
         .error-code {
-            font-family: var(--font-heading);
+            font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
             font-size: clamp(6rem, 18vw, 10rem);
             font-weight: 900;
             line-height: 1;
@@ -134,22 +117,19 @@
             background-clip: text;
             letter-spacing: -2px;
             animation: glowPulse 3s ease-in-out infinite;
-            position: relative;
         }
         @keyframes glowPulse {
             0%, 100% { filter: drop-shadow(0 0 20px rgba(0, 229, 160, 0.3)); }
             50% { filter: drop-shadow(0 0 40px rgba(0, 229, 160, 0.5)); }
         }
-        /* Error message */
         .error-message {
             font-size: clamp(1rem, 2vw, 1.2rem);
-            color: var(--text-muted);
+            color: #94a3b8;
             max-width: 500px;
             margin: 20px auto 32px;
             line-height: 1.6;
             animation: fadeIn 0.6s 0.2s ease both;
         }
-        /* Back to Home button */
         .btn-home {
             display: inline-flex;
             align-items: center;
@@ -160,13 +140,13 @@
             font-size: 1rem;
             border-radius: 50px;
             text-decoration: none;
-            transition: all var(--transition);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             border: none;
-            font-family: var(--font-body);
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
             background: linear-gradient(135deg, #00e5a0, #00c98a);
             color: #080e14;
-            box-shadow: 0 4px 20px var(--accent-glow);
+            box-shadow: 0 4px 20px rgba(0, 229, 160, 0.35);
             letter-spacing: 0.2px;
             animation: fadeIn 0.6s 0.4s ease both;
         }
@@ -177,28 +157,29 @@
         }
         .btn-home:active {
             transform: translateY(0);
-            box-shadow: 0 2px 10px var(--accent-glow);
+            box-shadow: 0 2px 10px rgba(0, 229, 160, 0.35);
         }
         .btn-home:focus-visible {
-            outline: 2px solid var(--accent);
+            outline: 2px solid #00e5a0;
             outline-offset: 3px;
         }
-        /* Decorative divider */
         .divider {
             width: 60px;
             height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            background: linear-gradient(90deg, #00e5a0, #4db8ff);
             border-radius: 3px;
             margin: 16px auto 24px;
             animation: fadeIn 0.6s 0.1s ease both;
         }
-        /* Responsive */
         @media (max-width: 768px) {
             .logo-text { font-size: 1.1rem; }
             .btn-home { padding: 12px 24px; font-size: 0.9rem; }
         }
         @media (max-width: 480px) {
             .btn-home { padding: 11px 18px; font-size: 0.85rem; }
+        }
+        .error-container .logo img {
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
         }
     </style>
 </head>
@@ -226,5 +207,25 @@
             Back to Home
         </a>
     </div>
+
+    <script>
+        (function() {
+            // ----- REDIRECT: if the URL path is exactly "/cart" (case-insensitive) -----
+            // This runs before any other logic, ensuring the 404 page is never shown for /cart.
+            var currentPath = window.location.pathname;
+            var pathLower = currentPath.toLowerCase();
+
+            // match "/cart" or "/cart/" (with or without trailing slash)
+            if (pathLower === '/cart' || pathLower === '/cart/') {
+                var target = window.location.origin + '/#cart';
+                // use replace to instantly redirect without adding to history
+                window.location.replace(target);
+                return; // stop further execution
+            }
+
+            // For any other path, show the 404 page normally.
+            // (No redirect hint, no extra text – just the clean 404 design)
+        })();
+    </script>
 </body>
 </html>
